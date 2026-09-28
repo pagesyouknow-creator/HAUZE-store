@@ -1,0 +1,71 @@
+{%- comment -%} Drop-/Newsletter-Seite: Countdown + E-Mail-Anmeldung. Wird auf der Passwortseite und der Startseite genutzt. {%- endcomment -%}
+<section class="drop" id="drop-{{ section.id }}">
+  <div class="drop__inner">
+    <div class="drop__logo">{% render 'logo' %}</div>
+
+    {% if section.settings.eyebrow != blank %}<p class="drop__eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+    <h1 class="drop__title">{{ section.settings.title }}</h1>
+    {% if section.settings.text != blank %}<p class="drop__text">{{ section.settings.text }}</p>{% endif %}
+
+    {%- if section.settings.drop_date != blank -%}
+      <div class="countdown" data-countdown="{{ section.settings.drop_date }}" aria-live="off">
+        <div><span data-unit="days">00</span><small>Tage</small></div>
+        <div><span data-unit="hours">00</span><small>Std</small></div>
+        <div><span data-unit="minutes">00</span><small>Min</small></div>
+        <div><span data-unit="seconds">00</span><small>Sek</small></div>
+      </div>
+    {%- endif -%}
+
+    {% form 'customer', id: 'drop-signup', class: 'signup' %}
+      {%- if form.posted_successfully? -%}
+        <p class="signup__success" role="status">{{ section.settings.success_text }}</p>
+      {%- else -%}
+        <input type="hidden" name="contact[tags]" value="newsletter, drop">
+        <label class="visually-hidden" for="drop-email">E-Mail</label>
+        <div class="signup__row">
+          <input id="drop-email" type="email" name="contact[email]" placeholder="{{ section.settings.placeholder }}" required autocomplete="email">
+          <button type="submit">{{ section.settings.button }}</button>
+        </div>
+        {%- if form.errors -%}
+          <p class="signup__error" role="alert">{{ form.errors.messages['email'] | default: 'Bitte gib eine gültige E-Mail-Adresse ein.' }}</p>
+        {%- endif -%}
+        <p class="signup__legal">{{ section.settings.legal }}</p>
+      {%- endif -%}
+    {% endform %}
+
+    {%- if section.settings.products != blank -%}
+      <p class="drop__products">{{ section.settings.products }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if request.page_type == 'password' -%}
+    <details class="owner-login">
+      <summary>Shop-Inhaber</summary>
+      {% form 'storefront_password' %}
+        <input type="password" name="password" placeholder="Passwort" required>
+        <button type="submit">Öffnen</button>
+        {{ form.errors | default_errors }}
+      {% endform %}
+    </details>
+  {%- endif -%}
+</section>
+
+<script src="{{ 'countdown.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Drop / Newsletter",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Kleiner Text oben", "default": "Der erste Drop" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Bald verfügbar." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Parfum. T-Shirts. Longsleeves. Reduziert auf das Wesentliche. Trag dich ein und erhalte als Erster Zugang." },
+    { "type": "text", "id": "drop_date", "label": "Drop-Datum (leer = kein Countdown)", "info": "Format: 2026-11-01T18:00:00+01:00", "default": "" },
+    { "type": "text", "id": "placeholder", "label": "Platzhalter E-Mail", "default": "E-Mail-Adresse" },
+    { "type": "text", "id": "button", "label": "Button-Text", "default": "Eintragen" },
+    { "type": "text", "id": "success_text", "label": "Erfolgsmeldung", "default": "Danke. Du bist dabei – wir melden uns zum Drop." },
+    { "type": "text", "id": "legal", "label": "Hinweis unter dem Formular", "default": "Mit deiner Anmeldung erhältst du Neuigkeiten von HAUZE. Abmeldung jederzeit möglich." },
+    { "type": "text", "id": "products", "label": "Produktzeile", "default": "Parfum · T-Shirts · Longsleeves" }
+  ],
+  "presets": [{ "name": "Drop / Newsletter" }]
+}
+{% endschema %}

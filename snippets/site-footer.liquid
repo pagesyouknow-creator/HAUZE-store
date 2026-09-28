@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+  <nav>
+    {%- for link in linklists.footer.links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+</footer>

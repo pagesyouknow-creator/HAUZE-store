@@ -1,0 +1,5 @@
+{%- if settings.logo != blank -%}
+  <img src="{{ settings.logo | image_url: width: 240 }}" alt="{{ shop.name }}" height="28" style="height:28px;width:auto">
+{%- else -%}
+  <span class="logo-text">{{ shop.name | upcase }}</span>
+{%- endif -%}
