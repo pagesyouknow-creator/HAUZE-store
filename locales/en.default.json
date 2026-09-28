@@ -1,0 +1,24 @@
+{
+  "general": {
+    "cart": "Cart",
+    "language": "Language",
+    "back_home": "Back to home",
+    "not_found": "Page not found",
+    "coming_soon_title": "Coming soon",
+    "coming_soon_text": "This section opens with the drop."
+  },
+  "drop": {
+    "days": "Days",
+    "hours": "Hrs",
+    "minutes": "Min",
+    "seconds": "Sec",
+    "email_label": "Email",
+    "email_error": "Please enter a valid email address.",
+    "owner_login": "Store owner",
+    "password": "Password",
+    "enter": "Enter"
+  },
+  "meta": {
+    "password_description": "The first drop. Sign up and be the first to know when it starts."
+  }
+}

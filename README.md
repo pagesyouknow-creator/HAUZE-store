@@ -1,18 +1,25 @@
 # HAUZE – Shopify Theme
 
-Clean, minimalistisch, Apple-inspiriert.
+Clean, minimal, Apple-inspired. English by default, ready for any language.
 
-## Phase 1: Drop-/Newsletter-Seite
-Die Seite (`sections/drop-landing.liquid`) wird als **Passwortseite** genutzt: Solange der Shop
-passwortgeschützt ist, sehen Besucher nur Countdown + Newsletter-Anmeldung. Anmeldungen landen
-in Shopify unter **Kunden** (Tags `newsletter`, `drop`, E-Mail-Marketing angemeldet).
+## Phase 1: Drop / newsletter page
+`sections/drop-landing.liquid` is used as the **password page**: while the store is password
+protected, visitors only see the countdown + email signup. Signups appear in Shopify under
+**Customers** (tags `newsletter`, `drop`, subscribed to email marketing).
 
-### Einrichtung
-1. Shopify Admin → **Onlineshop → Themes → Theme hinzufügen → Von GitHub verbinden** → Repo `HAUZE-store`, Branch wählen.
-2. **Onlineshop → Einstellungen → Passwortschutz** (bzw. Präferenzen): Passwortschutz aktivieren, eigenes Passwort setzen.
-3. Theme veröffentlichen. Anpassen unter **Themes → Anpassen → Passwortseite**
-   (Überschrift, Text, Drop-Datum, Logo unter Theme-Einstellungen).
-4. Datenschutz/Impressum unter **Einstellungen → Richtlinien** hinterlegen und im Footer-Menü verlinken.
+### Setup
+1. Shopify Admin → **Online Store → Themes → Add theme → Connect from GitHub** → repo `HAUZE-store`, pick the branch.
+2. **Online Store → Preferences → Password protection**: enable and set a password.
+3. Publish the theme. Customize under **Themes → Customize → Password page**
+   (heading, text, drop date, logo under Theme settings).
+4. Add privacy policy / legal notice under **Settings → Policies**.
+
+### Languages
+The theme ships in English (`locales/en.default.json`); German is included as an example (`locales/de.json`).
+To add languages: **Settings → Languages → Add language**, then translate theme content in the
+free **Translate & Adapt** app. A language switcher appears automatically as soon as there is
+more than one published language. For a new language, copy `locales/en.default.json` to
+`locales/<code>.json` (e.g. `fr.json`) and translate the values.
 
 ### Launch
-Passwortschutz deaktivieren, dann ist die Startseite live (später durch die echte Shop-Startseite ersetzen).
+Disable password protection to go live (later replace the home page with the real storefront).

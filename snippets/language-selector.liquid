@@ -1,0 +1,11 @@
+{%- comment -%} Language switcher. Appears automatically once more than one language is added in Settings → Languages. {%- endcomment -%}
+{%- if localization.available_languages.size > 1 -%}
+  {%- form 'localization', class: 'lang-select' -%}
+    <label class="visually-hidden" for="lang-{{ section_id | default: 'x' }}">{{ 'general.language' | t }}</label>
+    <select id="lang-{{ section_id | default: 'x' }}" name="language_code" onchange="this.form.submit()">
+      {%- for language in localization.available_languages -%}
+        <option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>{{ language.endonym_name | capitalize }}</option>
+      {%- endfor -%}
+    </select>
+  {%- endform -%}
+{%- endif -%}

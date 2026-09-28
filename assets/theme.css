@@ -54,3 +54,8 @@ img{max-width:100%;height:auto}
 
 @media(max-width:560px){.signup__row{flex-direction:column;border-radius:24px;padding:8px}
   .signup button{width:100%}.site-header__nav{gap:16px}}
+
+/* Language selector */
+.lang-select select{appearance:none;border:0;background:transparent;font:inherit;font-size:.8rem;color:var(--color-muted);cursor:pointer;padding:4px 0}
+.lang-select select:hover{color:var(--color-text)}
+.drop__lang{position:absolute;bottom:24px;left:5vw}

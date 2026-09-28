@@ -4,6 +4,7 @@
     {%- for link in linklists.main-menu.links -%}
       <a href="{{ link.url }}">{{ link.title }}</a>
     {%- endfor -%}
-    <a href="{{ routes.cart_url }}">Warenkorb ({{ cart.item_count }})</a>
+    {% render 'language-selector', section_id: 'header' %}
+    <a href="{{ routes.cart_url }}">{{ 'general.cart' | t }} ({{ cart.item_count }})</a>
   </nav>
 </header>

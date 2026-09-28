@@ -1,0 +1,24 @@
+{
+  "general": {
+    "cart": "Warenkorb",
+    "language": "Sprache",
+    "back_home": "Zur Startseite",
+    "not_found": "Seite nicht gefunden",
+    "coming_soon_title": "Bald verfügbar",
+    "coming_soon_text": "Dieser Bereich wird mit dem Drop freigeschaltet."
+  },
+  "drop": {
+    "days": "Tage",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek",
+    "email_label": "E-Mail",
+    "email_error": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "owner_login": "Shop-Inhaber",
+    "password": "Passwort",
+    "enter": "Öffnen"
+  },
+  "meta": {
+    "password_description": "Der erste Drop. Trag dich ein und erfahre als Erster, wann es losgeht."
+  }
+}
