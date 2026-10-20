@@ -33,6 +33,17 @@
       {%- endif -%}
     {% endform %}
 
+    {%- if section.blocks.size > 0 -%}
+      <ul class="drop__items">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            <strong>{{ block.settings.title }}</strong>
+            <span>{{ block.settings.text }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
     {%- if section.settings.products != blank -%}
       <p class="drop__products">{{ section.settings.products }}</p>
     {%- endif -%}
@@ -60,13 +71,23 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "The first drop" },
     { "type": "text", "id": "title", "label": "Heading", "default": "Coming soon." },
-    { "type": "textarea", "id": "text", "label": "Text", "default": "Fragrance. T-shirts. Long sleeves. Reduced to the essential. Sign up to get first access." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "HAUZE is clean, minimal clothing and fragrance for people who want less, but better. Our first drop is almost here. Sign up to get first access before it goes public." },
     { "type": "text", "id": "drop_date", "label": "Drop date (empty = no countdown)", "info": "Format: 2026-11-01T18:00:00+01:00", "default": "" },
     { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "Email address" },
     { "type": "text", "id": "button", "label": "Button text", "default": "Notify me" },
     { "type": "text", "id": "success_text", "label": "Success message", "default": "Thank you. You’re on the list – we’ll be in touch at the drop." },
     { "type": "text", "id": "legal", "label": "Note below the form", "default": "By signing up you’ll receive news from HAUZE. Unsubscribe anytime." },
     { "type": "text", "id": "products", "label": "Product line", "default": "Fragrance · T-Shirts · Long Sleeves" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Drop item",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Long sleeves" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Four designs" }
+      ]
+    }
   ],
   "presets": [{ "name": "Drop / Newsletter" }]
 }
