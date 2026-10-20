@@ -23,3 +23,10 @@ more than one published language. For a new language, copy `locales/en.default.j
 
 ### Launch
 Disable password protection to go live (later replace the home page with the real storefront).
+
+## Phase 2: Full shop
+Home (hero, collection tiles, featured products, statement), collection pages with sorting and pagination,
+product pages (gallery, variant pills, add to cart, shipping info), cart, search, footer newsletter.
+
+Create these collections so the home page tiles fill automatically (handles must match):
+`longsleeves`, `t-shirts`, `fragrance`. Otherwise pick collections in **Customize → Home page**.
