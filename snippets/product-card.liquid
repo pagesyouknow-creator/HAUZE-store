@@ -1,7 +1,8 @@
 <a class="card" href="{{ product.url }}">
   <div class="card__media">
+    {%- assign card_alt = product.featured_image.alt | default: product.title -%}
     {%- if product.featured_image -%}
-      {{ product.featured_image | image_url: width: 900 | image_tag: class: 'card__img', loading: 'lazy', widths: '300, 450, 600, 900', sizes: '(min-width: 900px) 25vw, 50vw', alt: product.featured_image.alt | default: product.title }}
+      {{ product.featured_image | image_url: width: 900 | image_tag: class: 'card__img', loading: 'lazy', widths: '300, 450, 600, 900', sizes: '(min-width: 900px) 25vw, 50vw', alt: card_alt }}
       {%- if product.images[1] -%}
         {{ product.images[1] | image_url: width: 900 | image_tag: class: 'card__img card__img--hover', loading: 'lazy', widths: '300, 450, 600, 900', sizes: '(min-width: 900px) 25vw, 50vw', alt: '' }}
       {%- endif -%}

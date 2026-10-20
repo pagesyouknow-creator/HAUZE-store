@@ -2,10 +2,11 @@
 <section class="product" data-product>
   <div class="product__gallery">
     {%- for media in product.media -%}
+      {%- assign product_alt = media.alt | default: product.title -%}
       {%- if media.media_type == 'image' -%}
         {%- if forloop.first -%}{%- assign load = 'eager' -%}{%- else -%}{%- assign load = 'lazy' -%}{%- endif -%}
         <div class="product__media" data-media-id="{{ media.id }}">
-          {{ media | image_url: width: 1400 | image_tag: loading: load, widths: '600, 900, 1200, 1400', sizes: '(min-width: 900px) 55vw, 100vw', alt: media.alt | default: product.title }}
+          {{ media | image_url: width: 1400 | image_tag: loading: load, widths: '600, 900, 1200, 1400', sizes: '(min-width: 900px) 55vw, 100vw', alt: product_alt }}
         </div>
       {%- endif -%}
     {%- endfor -%}
