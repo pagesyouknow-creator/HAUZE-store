@@ -1,4 +1,17 @@
 {
-  "sections": { "drop": { "type": "drop-landing" } },
-  "order": ["drop"]
+  "sections": {
+    "hero": { "type": "hero" },
+    "collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "c1": { "type": "collection", "settings": { "collection": "longsleeves" } },
+        "c2": { "type": "collection", "settings": { "collection": "t-shirts" } },
+        "c3": { "type": "collection", "settings": { "collection": "fragrance" } }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+    "products": { "type": "featured-products" },
+    "statement": { "type": "statement" }
+  },
+  "order": ["hero", "collections", "products", "statement"]
 }

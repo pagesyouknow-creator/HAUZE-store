@@ -5,7 +5,11 @@
     "back_home": "Zur Startseite",
     "not_found": "Seite nicht gefunden",
     "coming_soon_title": "Bald verfügbar",
-    "coming_soon_text": "Dieser Bereich wird mit dem Drop freigeschaltet."
+    "coming_soon_text": "Dieser Bereich wird mit dem Drop freigeschaltet.",
+    "search": "Suche",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "menu": "Menü"
   },
   "drop": {
     "days": "Tage",
@@ -20,5 +24,39 @@
   },
   "meta": {
     "password_description": "Der erste Drop. Trag dich ein und erfahre als Erster, wann es losgeht."
+  },
+  "products": {
+    "add_to_cart": "In den Warenkorb",
+    "sold_out": "Ausverkauft",
+    "from": "Ab",
+    "quantity": "Menge"
+  },
+  "collection": {
+    "view_all": "Alle ansehen",
+    "sort_by": "Sortieren",
+    "no_products": "Keine Produkte gefunden.",
+    "all_collections": "Kollektionen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer.",
+    "continue": "Weiter einkaufen",
+    "remove": "Entfernen",
+    "subtotal": "Zwischensumme",
+    "shipping_note": "Versand und Steuern werden an der Kasse berechnet.",
+    "update": "Aktualisieren",
+    "checkout": "Zur Kasse"
+  },
+  "search": {
+    "title": "Suche",
+    "placeholder": "Produkte suchen",
+    "submit": "Suchen",
+    "results_count": "{{ count }} Ergebnis(se) für „{{ terms }}“"
+  },
+  "footer": {
+    "newsletter_title": "Bleib auf dem Laufenden",
+    "newsletter_text": "Neue Drops und News. Ohne Lärm.",
+    "newsletter_button": "Abonnieren",
+    "newsletter_success": "Danke für deine Anmeldung."
   }
 }

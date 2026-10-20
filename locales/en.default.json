@@ -5,7 +5,11 @@
     "back_home": "Back to home",
     "not_found": "Page not found",
     "coming_soon_title": "Coming soon",
-    "coming_soon_text": "This section opens with the drop."
+    "coming_soon_text": "This section opens with the drop.",
+    "search": "Search",
+    "previous": "Previous",
+    "next": "Next",
+    "menu": "Menu"
   },
   "drop": {
     "days": "Days",
@@ -20,5 +24,39 @@
   },
   "meta": {
     "password_description": "The first drop. Sign up and be the first to know when it starts."
+  },
+  "products": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "from": "From",
+    "quantity": "Quantity"
+  },
+  "collection": {
+    "view_all": "View all",
+    "sort_by": "Sort by",
+    "no_products": "No products found.",
+    "all_collections": "Collections"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "shipping_note": "Shipping and taxes are calculated at checkout.",
+    "update": "Update",
+    "checkout": "Checkout"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search products",
+    "submit": "Search",
+    "results_count": "{{ count }} result(s) for “{{ terms }}”"
+  },
+  "footer": {
+    "newsletter_title": "Stay in the loop",
+    "newsletter_text": "New drops and news. No noise.",
+    "newsletter_button": "Subscribe",
+    "newsletter_success": "Thank you for subscribing."
   }
 }

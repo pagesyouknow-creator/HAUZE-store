@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="grid grid--3">
+    {%- for block in section.blocks -%}
+      {%- assign c = block.settings.collection -%}
+      {%- if c != blank -%}
+        <a class="tile" href="{{ c.url }}" {{ block.shopify_attributes }}>
+          <div class="tile__media">
+            {%- assign img = c.image | default: c.products.first.featured_image -%}
+            {%- if img -%}{{ img | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400, 700, 1000', sizes: '(min-width: 900px) 33vw, 100vw', alt: c.title }}{%- endif -%}
+          </div>
+          <h3 class="tile__title">{{ c.title }}</h3>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Collection tiles",
+  "blocks": [
+    { "type": "collection", "name": "Collection", "settings": [ { "type": "collection", "id": "collection", "label": "Collection" } ] }
+  ],
+  "presets": [{ "name": "Collection tiles", "blocks": [{ "type": "collection" }, { "type": "collection" }, { "type": "collection" }] }]
+}
+{% endschema %}

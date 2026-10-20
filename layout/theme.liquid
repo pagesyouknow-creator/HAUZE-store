@@ -11,6 +11,7 @@
   {{ content_for_header }}
 </head>
 <body>
+  {% if settings.announcement != blank %}<div class="announcement">{{ settings.announcement }}</div>{% endif %}
   {% render 'site-header' %}
   <main>{{ content_for_layout }}</main>
   {% render 'site-footer' %}

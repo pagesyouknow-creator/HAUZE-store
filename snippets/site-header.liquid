@@ -1,9 +1,10 @@
 <header class="site-header">
   <a href="{{ routes.root_url }}" class="site-header__logo">{% render 'logo' %}</a>
-  <nav class="site-header__nav">
+  <nav class="site-header__nav" aria-label="Main">
     {%- for link in linklists.main-menu.links -%}
       <a href="{{ link.url }}">{{ link.title }}</a>
     {%- endfor -%}
+    <a href="{{ routes.search_url }}">{{ 'general.search' | t }}</a>
     {% render 'language-selector', section_id: 'header' %}
     <a href="{{ routes.cart_url }}">{{ 'general.cart' | t }} ({{ cart.item_count }})</a>
   </nav>

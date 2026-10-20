@@ -1,0 +1,20 @@
+{%- paginate collections by 12 -%}
+<section class="section">
+  <div class="section__head section__head--page"><h1>{{ 'collection.all_collections' | t }}</h1></div>
+  <div class="grid grid--3">
+    {%- for c in collections -%}
+      <a class="tile" href="{{ c.url }}">
+        <div class="tile__media">
+          {%- assign img = c.image | default: c.products.first.featured_image -%}
+          {%- if img -%}{{ img | image_url: width: 1000 | image_tag: loading: 'lazy', alt: c.title }}{%- endif -%}
+        </div>
+        <h3 class="tile__title">{{ c.title }}</h3>
+      </a>
+    {%- endfor -%}
+  </div>
+  {%- render 'pagination', paginate: paginate -%}
+</section>
+{%- endpaginate -%}
+{% schema %}
+{ "name": "Collection list" }
+{% endschema %}

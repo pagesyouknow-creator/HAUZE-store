@@ -1,0 +1,12 @@
+<section class="statement">
+  <p>{{ section.settings.text }}</p>
+</section>
+{% schema %}
+{
+  "name": "Statement",
+  "settings": [
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Made for those who want less, but better." }
+  ],
+  "presets": [{ "name": "Statement" }]
+}
+{% endschema %}

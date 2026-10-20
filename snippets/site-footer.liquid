@@ -1,8 +1,25 @@
 <footer class="site-footer">
-  <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
-  <nav>
-    {%- for link in linklists.footer.links -%}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {%- endfor -%}
-  </nav>
+  <div class="site-footer__top">
+    <div class="site-footer__news">
+      <h2>{{ 'footer.newsletter_title' | t }}</h2>
+      <p>{{ 'footer.newsletter_text' | t }}</p>
+      {%- form 'customer', id: 'footer-signup', class: 'signup' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="signup__success" role="status">{{ 'footer.newsletter_success' | t }}</p>
+        {%- else -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label class="visually-hidden" for="footer-email">{{ 'drop.email_label' | t }}</label>
+          <div class="signup__row">
+            <input id="footer-email" type="email" name="contact[email]" placeholder="{{ 'drop.email_label' | t }}" required autocomplete="email">
+            <button type="submit">{{ 'footer.newsletter_button' | t }}</button>
+          </div>
+          {%- if form.errors -%}<p class="signup__error" role="alert">{{ 'drop.email_error' | t }}</p>{%- endif -%}
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      {%- for link in linklists.footer.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+    </nav>
+  </div>
+  <p class="site-footer__copy">© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
 </footer>
